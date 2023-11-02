@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/api/v1/login" method="post">
+        <!-- messages ini dari req.flash('type message', 'the message'),  -->
+        <% if(messages.Error){ %>
+            <span style="color: red;">
+                <%= messages.Error %>
+            </span>
+        <% } %>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
+</body>
+</html>
